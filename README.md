@@ -1,24 +1,26 @@
 # Subsea Intelligence Control Tower
 
-A Node.js prototype for Telin's proposed **Intelligent Corridor Portfolio Management** layer.
+A React + TypeScript product prototype for Telin's proposed **Intelligent Corridor Portfolio Management** layer.
 
 ## What the prototype demonstrates
 
-- Corridor prioritisation across demand, diversity and return
+- Interactive corridor prioritisation across demand, diversity and return
 - Hyperscaler, AI inference and NeoCloud demand context
 - Early warning on delivery, supplier, permit, regulatory and geopolitical signals
 - Commercial readiness before RFS
-- Executive scenario recommendations and management decision gates
+- Executive scenario recommendations, work queues and decision gates
+- Original illustrative cable-corridor visual (not an authoritative route map)
 
 Everything is dummy data. The data structure is intentionally separated in `public/app.js`, making it straightforward to replace with APIs, project-management feeds, commercial pipeline data and external-risk signals later.
 
 ## Run locally
 
 ```bash
-npm start
+npm install
+npm run dev
 ```
 
-Open http://localhost:4173.
+Open the local address shown by Vite (normally http://localhost:5173).
 
 ## Suggested real-data evolution
 
