@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Telin | Subsea Intelligence Control Tower</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand"><span class="brand-mark">T</span><span>telin</span></div>
+        <p class="side-kicker">INTELLIGENT CORRIDORS</p>
+        <nav class="nav-list" aria-label="Main navigation">
+          <button class="nav-item active" data-view="overview"><span>◈</span> Portfolio Overview</button>
+          <button class="nav-item" data-view="corridors"><span>⌁</span> Corridor Twin</button>
+          <button class="nav-item" data-view="signals"><span>◉</span> Early Signals <b id="signal-count">6</b></button>
+          <button class="nav-item" data-view="readiness"><span>↗</span> Commercial Readiness</button>
+          <button class="nav-item" data-view="scenarios"><span>◇</span> Scenario Lab</button>
+        </nav>
+        <div class="side-note">
+          <span class="pulse"></span>
+          <p><strong>Dummy prototype</strong><br />Designed for mock-data validation.</p>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">SUBSEA INTELLIGENCE CONTROL TOWER</p>
+            <h1 id="page-title">Intelligent Corridor Portfolio</h1>
+          </div>
+          <div class="topbar-actions">
+            <span class="date-chip" id="date-chip"></span>
+            <button class="outline-button" id="refresh-button">↻ Refresh signals</button>
+            <button class="primary-button" id="simulate-button">Run scenario</button>
+          </div>
+        </header>
+
+        <section class="hero-copy">
+          <p>Turn cable projects into commercially ready, AI-demand corridors—by connecting demand, diversity, delivery, CAPEX and risk before decisions are locked.</p>
+          <div class="filters" id="filters"></div>
+        </section>
+
+        <section class="kpi-grid" aria-label="Portfolio indicators">
+          <article class="kpi-card"><p>Portfolio value</p><h2>$186.4M</h2><span class="positive">↑ 12% vs plan</span></article>
+          <article class="kpi-card"><p>AI-ready capacity</p><h2>102 Tbps</h2><span>Across 5 priority corridors</span></article>
+          <article class="kpi-card"><p>Commercial readiness</p><h2>68%</h2><span class="warning">2 corridors need intervention</span></article>
+          <article class="kpi-card"><p>Critical early signals</p><h2 id="critical-kpi">2</h2><span class="critical">Action within 7 days</span></article>
+        </section>
+
+        <section class="dashboard-grid">
+          <article class="panel portfolio-panel">
+            <div class="panel-heading">
+              <div><p class="eyebrow">DEMAND × DIVERSITY × RETURN</p><h3>Priority corridor portfolio</h3></div>
+              <span class="status-label">LIVE MOCK DATA</span>
+            </div>
+            <div class="network-schematic" aria-label="Simplified visual sketch of Telin priority cable routes">
+              <span class="route-band ice1"></span><span class="route-band ice2"></span><span class="route-band ice4"></span><span class="route-band ice10"></span>
+              <span class="route-tag tag-ice1">ICE 1</span><span class="route-tag tag-ice2">ICE 2</span><span class="route-tag tag-ice4">ICE 4</span><span class="route-tag tag-ice10">ICE 10</span>
+              <span class="map-node batam">Batam</span><span class="map-node singapore">Singapore</span><span class="map-node japan">Japan</span><span class="map-node us">US West</span><span class="map-node me">Middle East</span><span class="map-node europe">Europe</span>
+              <small>Illustrative corridor sketch — dummy portfolio data</small>
+            </div>
+            <div class="corridor-map" id="corridor-map"></div>
+            <div class="legend"><span><i class="dot high"></i>High intervention</span><span><i class="dot medium"></i>Watchlist</span><span><i class="dot low"></i>On track</span></div>
+          </article>
+
+          <article class="panel signal-panel">
+            <div class="panel-heading"><div><p class="eyebrow">THREAT EARLY-WARNING</p><h3>Signals requiring attention</h3></div><button class="text-button" data-view="signals">View all</button></div>
+            <div class="signal-list" id="signal-list"></div>
+          </article>
+
+          <article class="panel readiness-panel">
+            <div class="panel-heading"><div><p class="eyebrow">COMMERCIALISE BEFORE RFS</p><h3>Readiness by corridor</h3></div></div>
+            <div class="readiness-list" id="readiness-list"></div>
+          </article>
+
+          <article class="panel actions-panel">
+            <div class="panel-heading"><div><p class="eyebrow">NEXT DECISION GATES</p><h3>Executive actions</h3></div></div>
+            <ol class="action-list" id="action-list"></ol>
+          </article>
+        </section>
+
+        <section class="panel project-panel">
+          <div class="panel-heading"><div><p class="eyebrow">ICE DEVELOPMENT PIPELINE</p><h3>Portfolio milestones and decision gates</h3></div><span class="mono">Portfolio review: 05 DEC 2026</span></div>
+          <div class="table-wrap"><table><thead><tr><th>System</th><th>Corridor</th><th>Demand signal</th><th>RFS readiness</th><th>Risk state</th><th>Next gate</th></tr></thead><tbody id="project-table"></tbody></table></div>
+        </section>
+      </main>
+    </div>
+    <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="close-button" id="close-modal">×</button>
+        <p class="eyebrow">SCENARIO LAB</p><h2 id="modal-title">Decision recommendation</h2>
+        <div id="modal-body"></div>
+      </section>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>
